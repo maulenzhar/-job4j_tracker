@@ -13,6 +13,7 @@ public class Computer {
         this.ssd = ssd;
         this.cpu = cpu;
     }
+
     public void printInfo() {
         System.out.println("Много мониторов: " + multiMonitor);
         System.out.println("SSD: " + ssd + " GB");
