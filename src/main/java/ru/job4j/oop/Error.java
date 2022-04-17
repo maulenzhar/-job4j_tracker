@@ -30,5 +30,4 @@ public class Error {
         Error allowError = new Error(true, 403, "Forbidden ");
         allowError.printInfo();
     }
-
 }
