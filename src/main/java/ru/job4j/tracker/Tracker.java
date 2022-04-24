@@ -50,6 +50,7 @@ public class Tracker {
         if (index != -1) {
             System.arraycopy(items, index + 1, items, index, size - index - 1);
             items[size - 1] = null;
+            size--;
             return true;
         }
         return false;
@@ -58,7 +59,7 @@ public class Tracker {
     private int indexOf(int id) {
         int rsl = -1;
         for (int index = 0; index < size; index++) {
-            if (items[index] != null && items[index].getId() == id) {
+            if (items[index].getId() == id) {
                 rsl = index;
                 break;
             }
