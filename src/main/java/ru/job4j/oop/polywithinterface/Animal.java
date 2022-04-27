@@ -1,4 +1,4 @@
-package ru.job4j.oop.poly_with_interface;
+package ru.job4j.oop.polywithinterface;
 
 public interface Animal {
     void sound();
