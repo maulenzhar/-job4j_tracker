@@ -3,37 +3,47 @@ package ru.job4j.tracker;
 import ru.job4j.tracker.action.*;
 import ru.job4j.tracker.inpute.ConsoleInput;
 import ru.job4j.tracker.inpute.Input;
+import ru.job4j.tracker.output.ConsoleOutput;
+import ru.job4j.tracker.output.Output;
 
 public class StartUI {
+
+    private final Output out;
+
+    public StartUI(Output out) {
+        this.out = out;
+    }
+
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
-            StartUI.showMenu(actions);
+            this.showMenu(actions);
             int select = input.askInt("Select: ");
             UserAction action = actions[select];
             run = action.execute(input, tracker);
         }
     }
 
-    public static void showMenu(UserAction[] actions) {
-        System.out.println("Menu:");
-        for (int i = 0; i < actions.length; i++) {
-            System.out.println(i + ". " + actions[i].name());
+    private void showMenu(UserAction[] actions) {
+        out.println("Menu.");
+        for (int index = 0; index < actions.length; index++) {
+            out.println(index + ". " + actions[index].name());
         }
     }
 
     public static void main(String[] args) {
+        Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(),
-                new DeleteAction(),
-                new EditAction(),
-                new FindByIdAction(),
-                new FindByNameAction(),
-                new FindItemAction(),
+                new CreateAction(output),
+                new DeleteAction(output),
+                new EditAction(output),
+                new FindByIdAction(output),
+                new FindByNameAction(output),
+                new FindItemAction(output),
                 new ExitAction()
         };
-        new StartUI().init(input, tracker, actions);
+        new StartUI(output).init(input, tracker, actions);
     }
 }
