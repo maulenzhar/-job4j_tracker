@@ -5,11 +5,11 @@ import ru.job4j.tracker.Item;
 import ru.job4j.tracker.Tracker;
 import ru.job4j.tracker.output.Output;
 
-public class FindItemAction implements UserAction {
+public class FindAllItemsAction implements UserAction {
 
     private final Output out;
 
-    public FindItemAction(Output out) {
+    public FindAllItemsAction(Output out) {
         this.out = out;
     }
 
