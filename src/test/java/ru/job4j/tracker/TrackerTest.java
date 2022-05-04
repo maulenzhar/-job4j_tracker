@@ -107,7 +107,7 @@ public class TrackerTest {
         Item one = tracker.add(new Item("test1"));
         String replaceName = "New Test Name";
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(one.getId()), replaceName, "1"}
+                new String[]{"0", String.valueOf(one.getId()), replaceName, "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new EditAction(out),
@@ -136,7 +136,7 @@ public class TrackerTest {
         Item one = tracker.add(new Item("test1"));
         String replaceName = "New Test Name";
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(one.getId()), "1"}
+                new String[]{"0", String.valueOf(one.getId()), "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindAllItemsAction(out),
@@ -149,7 +149,7 @@ public class TrackerTest {
                         + "0. Show all items" + ln
                         + "1. Exit Program" + ln
                         + "=== Show all items ===" + ln
-                        + "Item{id=1, name='test1', created="+created.format(FORMATTER)+"}" + ln
+                        + "Item{id=1, name='test1', created=" + created.format(FORMATTER) + "}" + ln
                         + "Menu:" + ln
                         + "0. Show all items" + ln
                         + "1. Exit Program" + ln
@@ -163,7 +163,7 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
         Input in = new StubInput(
-                new String[] {"0", "test1", "1"}
+                new String[]{"0", "test1", "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindByNameAction(out),
@@ -176,7 +176,7 @@ public class TrackerTest {
                         + "0. Find items by name" + ln
                         + "1. Exit Program" + ln
                         + "=== Find items by name ===" + ln
-                        + "Item{id=1, name='test1', created="+created.format(FORMATTER)+"}" + ln
+                        + "Item{id=1, name='test1', created=" + created.format(FORMATTER) + "}" + ln
                         + "Menu:" + ln
                         + "0. Find items by name" + ln
                         + "1. Exit Program" + ln
@@ -190,7 +190,7 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(one.getId()), "1"}
+                new String[]{"0", String.valueOf(one.getId()), "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindByIdAction(out),
@@ -203,7 +203,7 @@ public class TrackerTest {
                         + "0. Find item by id" + ln
                         + "1. Exit Program" + ln
                         + "=== Find item by id ===" + ln
-                        + "Item{id=1, name='test1', created="+created.format(FORMATTER)+"}" + ln
+                        + "Item{id=1, name='test1', created=" + created.format(FORMATTER) + "}" + ln
                         + "Menu:" + ln
                         + "0. Find item by id" + ln
                         + "1. Exit Program" + ln
