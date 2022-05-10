@@ -213,7 +213,7 @@ public class TrackerTest {
     public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"-1", "00", "0"}
+                new String[] {"-1", "0"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = new UserAction[]{
