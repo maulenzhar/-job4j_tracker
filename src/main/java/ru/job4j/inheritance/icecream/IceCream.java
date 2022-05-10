@@ -1,8 +1,7 @@
 package ru.job4j.inheritance.icecream;
 
-
 public class IceCream {
-    private int weight;
+    private final int weight;
 
     public IceCream(int weight) {
         this.weight = weight;
