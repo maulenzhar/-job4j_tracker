@@ -1,7 +1,5 @@
 package ru.job4j.tracker.inpute;
 
-import ru.job4j.tracker.inpute.Input;
-
 import java.util.Scanner;
 
 public class ConsoleInput implements Input {
