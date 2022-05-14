@@ -1,6 +1,6 @@
 package ru.job4j.ooa.fabric;
 
-public class Triangle  implements Shape {
+public class Triangle implements Shape {
     int a;
     int h;
 
@@ -13,7 +13,7 @@ public class Triangle  implements Shape {
     public String draw() {
         String ln = System.lineSeparator();
         return "   *" + ln
-                + "  * *"+ ln
+                + "  * *" + ln
                 + " *   *" + ln
                 + "*******";
     }
