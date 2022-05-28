@@ -26,7 +26,7 @@ public class Citizen {
         }
         if (o == null || getClass() != o.getClass()) {
             return false;
-        } ;
+        }
         Citizen citizen = (Citizen) o;
         return Objects.equals(passport, citizen.passport);
     }
