@@ -2,10 +2,7 @@ package ru.job4j.collection.sortingtreeset;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -38,6 +35,28 @@ public class UserTest {
                         new User("Petr", 25),
                         new User("Petr", 33),
                         new User("Petr", 35)
+                )
+        );
+        assertThat(users, is(expected));
+    }
+
+    @Test
+    public void whenDescForUsersWithEqualNameButDifferentAge() {
+        Set<User> users = new TreeSet<>(Collections.reverseOrder());
+        users.add(new User("Petr", 35));
+        users.add(new User("Ivan", 31));
+        users.add(new User("Petr", 25));
+        users.add(new User("Ivan", 29));
+        users.add(new User("Petr", 33));
+        users.add(new User("Ivan", 27));
+        Set<User> expected = new TreeSet<>(
+                Arrays.asList(
+                        new User("Petr", 35),
+                        new User("Petr", 33),
+                        new User("Ivan", 31),
+                        new User("Petr", 25),
+                        new User("Ivan", 29),
+                        new User("Ivan", 27)
                 )
         );
         assertThat(users, is(expected));
