@@ -12,7 +12,7 @@ public class StringCompare implements Comparator<String> {
                 return res;
             }
         }
-        int res2 =  Integer.compare(o1.length(), o2.length());
-        return   res2 != 0 ?  res2 : res;
+        int res2 = Integer.compare(o1.length(), o2.length());
+        return res2 != 0 ? res2 : res;
     }
 }
