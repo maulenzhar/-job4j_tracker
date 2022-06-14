@@ -7,11 +7,11 @@ public class FunctionalInterfaces {
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();
         List<String> list = List.of("one", "two", "three", "four", "five", "six", "seven");
-        Supplier<Set<String>> sup1 = () -> new HashSet<>(list);
-        BiConsumer<Integer, String> biCon =  (s, s1) ->  map.put(s, s1);
-        Set<String> strings1 = sup1.get();
+        Supplier<Set<String>> supplier = () -> new HashSet<>(list);
+        BiConsumer<Integer, String> biCon =  (i, s) ->  map.put(i, s);
+        Set<String> strs = supplier.get();
         int j = 1;
-        for (String s : strings1) {
+        for (String s : strs) {
             biCon.accept(j++, s);
         }
 
