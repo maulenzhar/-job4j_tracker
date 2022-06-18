@@ -18,7 +18,7 @@ public class CountFunctionTest {
 
     @Test
     public void whenQuadraticFunctionThenLinearResults() {
-        List<Double> result = CountFunction.diapason(2, 5, x -> 2 * x * x + 1 * x);
+        List<Double> result = CountFunction.diapason(2, 5, x -> 2 * Math.pow(x, 2) + 1 * x);
         List<Double> expected = Arrays.asList(10D, 21D, 36D);
         assertThat(result, is(expected));
     }
