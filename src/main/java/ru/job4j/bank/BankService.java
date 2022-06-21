@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * Класс описывает работу внутрибанковской системы
+ *
  * @author Maulen Zharylgasynov
  * @version 1.0
  */
@@ -18,6 +19,7 @@ public class BankService {
 
     /**
      * Метод принимает на вход клиента и добавляем в коллекцию users
+     *
      * @param user
      */
     public void addUser(User user) {
@@ -28,6 +30,7 @@ public class BankService {
      * Метод принимает паспорт и аккаунт клиента.
      * По паспорту находим клиента.
      * Если у клиента нет добавляемого аккаунта, то добавляем
+     *
      * @param passport
      * @param account
      */
@@ -43,20 +46,20 @@ public class BankService {
 
     /**
      * Метод ишет клиента по паспорту
+     *
      * @param passport
      * @return
      */
     public User findByPassport(String passport) {
-        for (User user : users.keySet()) {
-            if (passport.equals(user.getPassport())) {
-                return user;
-            }
-        }
-        return null;
+        return users.keySet().stream()
+                .filter(s -> s.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
      * Метод ищет аккаунт клиента по реквизиту
+     *
      * @param passport
      * @param requisite
      * @return
@@ -64,12 +67,10 @@ public class BankService {
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
-            List<Account> listAccounts = users.get(user);
-            for (Account acc : listAccounts) {
-                if (requisite.equals(acc.getRequisite())) {
-                    return acc;
-                }
-            }
+            return users.get(user).stream()
+                    .filter(s -> s.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
         return null;
     }
@@ -77,6 +78,7 @@ public class BankService {
     /**
      * Метод переводит денежные средства с одного счета на другой
      * если сумма переда хватает у источника
+     *
      * @param srcPassport
      * @param srcRequisite
      * @param destPassport
