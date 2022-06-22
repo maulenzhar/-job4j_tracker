@@ -39,14 +39,14 @@ public class StreamUsage {
                 .map(task -> task.name)
                 .forEach(System.out::println);
 
-        List<String> names = tasks.stream().map(
-                task -> task.name
-        ).collect(Collectors.toList());
+        List<String> names = tasks.stream()
+                .map(task -> task.name)
+                .collect(Collectors.toList());
         System.out.println(names);
 
-        long total = tasks.stream().map(
-                task -> task.spent
-        ).reduce(0L, Long::sum);
+        long total = tasks.stream()
+                .map(task -> task.spent)
+                .reduce(0L, Long::sum);
         System.out.println(total);
 
         tasks.stream()
@@ -56,11 +56,12 @@ public class StreamUsage {
                 .forEach(System.out::println);
 
         System.out.println(
-                List.of(1, 2, 3, 4).stream().collect(
+                List.of(1, 2, 3, 4).stream()
+                        .collect(
                         Collectors.toMap(
                                 e -> e,
                                 e -> e * e
-                ))
+                        ))
         );
     }
 }
