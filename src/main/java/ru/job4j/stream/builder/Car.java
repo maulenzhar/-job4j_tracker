@@ -11,13 +11,13 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", created=" + created +
-                ", volume=" + volume +
-                ", color='" + color + '\'' +
-                '}';
+        return "Car{"
+                + "brand='" + brand + '\''
+                + ", model='" + model + '\''
+                + ", created=" + created
+                + ", volume=" + volume
+                + ", color='" + color + '\''
+                + '}';
     }
 
     static class Builder {
@@ -54,11 +54,11 @@ public class Car {
 
         Car build() {
             Car car = new Car();
-            car.brand=brand;
-            car.model=model;
-            car.created=created;
-            car.volume=volume;
-            car.color=color;
+            car.brand = brand;
+            car.model = model;
+            car.created = created;
+            car.volume = volume;
+            car.color = color;
             return car;
         }
     }
