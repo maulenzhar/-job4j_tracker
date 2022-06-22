@@ -10,8 +10,6 @@ public class Card {
         this.suit = suit;
         this.value = value;
     }
-
-
 }
 
 class DoubleLoop {
