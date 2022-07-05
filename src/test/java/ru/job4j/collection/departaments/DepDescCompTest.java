@@ -59,7 +59,7 @@ public class DepDescCompTest {
                 "K2/SK1/SSK2",
                 "K2/SK1/SSK1"
         );
-        List<String> expect = Arrays.asList(
+        List<String> expect = List.of(
                 "K2",
                 "K2/SK1",
                 "K2/SK1/SSK1",
