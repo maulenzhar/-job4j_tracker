@@ -2,7 +2,7 @@ package ru.job4j.stream.statistics;
 
 import java.util.Objects;
 
-public class Tuple implements Comparable<Tuple>{
+public class Tuple implements Comparable<Tuple> {
     private String name;
     private double score;
 
