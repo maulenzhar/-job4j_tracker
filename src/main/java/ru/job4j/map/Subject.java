@@ -3,20 +3,20 @@ package ru.job4j.map;
 import java.util.Objects;
 
 public class Subject {
-    private String name;
+    private String subjectName;
     private int score;
 
-    public Subject(String name, int score) {
-        this.name = name;
+    public Subject(String subjectName, int score) {
+        this.subjectName = subjectName;
         this.score = score;
     }
 
-    public String getName() {
-        return name;
+    public String getSubjectName() {
+        return subjectName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
     }
 
     public int getScore() {
@@ -36,18 +36,18 @@ public class Subject {
             return false;
         }
         Subject subject = (Subject) o;
-        return Objects.equals(name, subject.name);
+        return Objects.equals(subjectName, subject.subjectName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(subjectName);
     }
 
     @Override
     public String toString() {
         return "Subject{"
-                + "name='" + name + '\''
+                + "name='" + subjectName + '\''
                 + ", score=" + score
                 + '}';
     }

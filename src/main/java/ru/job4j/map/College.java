@@ -45,7 +45,7 @@ public class College {
         if (a != null) {
             return students.get(a)
                     .stream()
-                    .filter(s -> s.getName().equals(name))
+                    .filter(s -> s.getSubjectName().equals(name))
                     .findFirst()
                     .orElse(null);
         }
