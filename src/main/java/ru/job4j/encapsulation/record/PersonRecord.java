@@ -21,11 +21,15 @@ public final class PersonRecord {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
         var that = (PersonRecord) obj;
-        return Objects.equals(this.name, that.name) &&
-                this.age == that.age;
+        return Objects.equals(this.name, that.name)
+                && this.age == that.age;
     }
 
     @Override
@@ -35,8 +39,8 @@ public final class PersonRecord {
 
     @Override
     public String toString() {
-        return "PersonRecord[" +
-                "name=" + name + ", " +
-                "age=" + age + ']';
+        return "PersonRecord["
+                + "name=" + name + ", "
+                + "age=" + age + ']';
     }
 }

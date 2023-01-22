@@ -1,4 +1,4 @@
-package ru.job4j.inheritance.sokrytie_metoda;
+package ru.job4j.inheritance.sokrytiemetoda;
 
 /*Статический метод, определенный с той же сигнатурой в дочернем классе, называется скрытым. */
 public class HideExampleMain {

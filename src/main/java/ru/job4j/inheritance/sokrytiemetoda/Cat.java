@@ -1,4 +1,4 @@
-package ru.job4j.inheritance.sokrytie_metoda;
+package ru.job4j.inheritance.sokrytiemetoda;
 
 public class Cat extends Animal {
     @Override

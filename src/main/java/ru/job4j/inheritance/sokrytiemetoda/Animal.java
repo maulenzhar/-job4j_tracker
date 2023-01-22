@@ -1,4 +1,4 @@
-package ru.job4j.inheritance.sokrytie_metoda;
+package ru.job4j.inheritance.sokrytiemetoda;
 
 public class Animal {
     public void instanceInvoke() {
