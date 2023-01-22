@@ -21,11 +21,15 @@ public final class Customer {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
         var that = (Customer) obj;
-        return Objects.equals(this.name, that.name) &&
-                this.amount == that.amount;
+        return Objects.equals(this.name, that.name)
+                && this.amount == that.amount;
     }
 
     @Override
@@ -35,9 +39,9 @@ public final class Customer {
 
     @Override
     public String toString() {
-        return "Customer[" +
-                "name=" + name + ", " +
-                "amount=" + amount + ']';
+        return "Customer["
+                + "name=" + name + ", "
+                + "amount=" + amount + ']';
     }
 
 }
