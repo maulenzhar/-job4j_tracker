@@ -1,4 +1,4 @@
-package ru.job4j.collection.queue.interfaceQueue;
+package ru.job4j.collection.queue.interfacequeue;
 
 import org.junit.jupiter.api.Test;
 

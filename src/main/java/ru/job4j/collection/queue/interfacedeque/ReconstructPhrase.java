@@ -1,4 +1,4 @@
-package ru.job4j.collection.queue.interfaceDeque;
+package ru.job4j.collection.queue.interfacedeque;
 
 import java.util.Deque;
 import java.util.Iterator;

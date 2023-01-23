@@ -58,10 +58,10 @@ public class StreamUsage {
         System.out.println(
                 List.of(1, 2, 3, 4).stream()
                         .collect(
-                        Collectors.toMap(
-                                e -> e,
-                                e -> e * e
-                        ))
+                                Collectors.toMap(
+                                        e -> e,
+                                        e -> e * e
+                                ))
         );
 
         System.out.println(
