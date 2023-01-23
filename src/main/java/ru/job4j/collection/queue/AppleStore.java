@@ -1,6 +1,5 @@
 package ru.job4j.collection.queue;
 
-import java.util.LinkedList;
 import java.util.Queue;
 
 public class AppleStore {
@@ -14,24 +13,18 @@ public class AppleStore {
     }
 
     public String getLastHappyCustomer() {
-        String res = "";
+        Customer customer  = null;
         for (int i = 0; i < count; i++) {
-            Customer customer = queue.poll();
-            if (i == count - 1) {
-                res += customer.name();
-            }
+            customer = queue.poll();
         }
-        return res;
+        return customer.name();
     }
 
     public String getLastUpsetCustomer() {
-        String res = "";
-        for (int i = 0; i <= count + 1; i++) {
-            Customer customer = queue.poll();
-            if (i == count) {
-                res += customer.name();
-            }
+        Customer customer  = null;
+        for (int i = 0; i < count + 1; i++) {
+            customer = queue.poll();
         }
-        return res;
+        return customer.name();
     }
 }
