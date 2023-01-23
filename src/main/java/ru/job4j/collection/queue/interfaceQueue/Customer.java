@@ -1,4 +1,4 @@
-package ru.job4j.collection.queue;
+package ru.job4j.collection.queue.interfaceQueue;
 
 import java.util.Objects;
 
