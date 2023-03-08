@@ -1,11 +1,23 @@
-package ru.job4j.tracker;
+package ru.job4j.tracker.repo;
 
+import ru.job4j.tracker.Item;
+
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tracker {
+public class MemTracker implements Store {
+    private Connection cn;
+
     private List<Item> items = new ArrayList<>();
     private int ids = 1;
+
+    public MemTracker() {
+    }
+
+    public MemTracker(Connection cn) {
+        this.cn = cn;
+    }
 
     public Item add(Item item) {
         item.setId(ids++);
@@ -60,5 +72,12 @@ public class Tracker {
             }
         }
         return rsl;
+    }
+
+    @Override
+    public void close() throws Exception {
+        if (cn != null) {
+            cn.close();
+        }
     }
 }
