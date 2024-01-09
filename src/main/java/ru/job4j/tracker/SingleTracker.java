@@ -1,11 +1,13 @@
 package ru.job4j.tracker;
 
+import ru.job4j.tracker.repo.MemTracker;
+
 import java.util.List;
 
 public final class SingleTracker {
     private static SingleTracker instance = null;
 
-    private Tracker tracker = new Tracker();
+    private MemTracker tracker = new MemTracker();
 
     private SingleTracker() {
     }

@@ -58,9 +58,18 @@ public class StreamUsage {
         System.out.println(
                 List.of(1, 2, 3, 4).stream()
                         .collect(
+                                Collectors.toMap(
+                                        e -> e,
+                                        e -> e * e
+                                ))
+        );
+
+        System.out.println(
+                List.of(1, 1, 2, 2, 9, 8).stream().collect(
                         Collectors.toMap(
                                 e -> e,
-                                e -> e * e
+                                e -> e * e,
+                                (existing, replacement) -> existing
                         ))
         );
     }

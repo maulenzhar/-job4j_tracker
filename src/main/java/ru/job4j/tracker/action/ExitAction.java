@@ -1,8 +1,9 @@
 package ru.job4j.tracker.action;
 
 import ru.job4j.tracker.inpute.Input;
-import ru.job4j.tracker.Tracker;
+import ru.job4j.tracker.repo.MemTracker;
 import ru.job4j.tracker.output.Output;
+import ru.job4j.tracker.repo.Store;
 
 public class ExitAction implements UserAction {
 
@@ -18,7 +19,7 @@ public class ExitAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store tracker) {
         out.println("=== Exit Program ===");
         return false;
     }

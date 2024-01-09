@@ -1,7 +1,5 @@
 package ru.job4j.stream.turcompany;
 
-import ru.job4j.collection.sortingtreeset.User;
-
 import java.util.Objects;
 
 public class Address implements Comparable<Address> {
