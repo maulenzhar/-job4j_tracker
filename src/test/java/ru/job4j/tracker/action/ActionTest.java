@@ -1,6 +1,5 @@
 package ru.job4j.tracker.action;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 import ru.job4j.tracker.Item;
 import ru.job4j.tracker.inpute.Input;
@@ -15,7 +14,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class EditActionTest {
+public class ActionTest {
 
     @Test
     public void whenItemWasEditSuccessfully() {
@@ -33,7 +32,7 @@ public class EditActionTest {
         boolean res = replaceAction.execute(input, tracker);
 
         String ln = System.lineSeparator();
-        assertThat(output.toString(), is( "=== Edit item ===" + ln
+        assertThat(output.toString(), is("=== Edit item ===" + ln
                 + "Заявка изменена успешно." + ln));
     }
 
@@ -51,9 +50,9 @@ public class EditActionTest {
         when(input.askStr(any(String.class))).thenReturn(replacedName);
 
         boolean res = deleteAction.execute(input, tracker);
-        assertThat(res, is( true));
+        assertThat(res, is(true));
         String ln = System.lineSeparator();
-        assertThat(output.toString(), is( "=== Delete item ===" + ln
+        assertThat(output.toString(), is("=== Delete item ===" + ln
                 + "Заявка удалена успешно." + ln));
     }
 
@@ -72,7 +71,7 @@ public class EditActionTest {
 
         boolean res = action.execute(input, tracker);
 
-        assertThat(res, is( true));
+        assertThat(res, is(true));
     }
 
     @Test
@@ -90,6 +89,6 @@ public class EditActionTest {
 
         boolean res = action.execute(input, tracker);
 
-        assertThat(res, is( true));
+        assertThat(res, is(true));
     }
 }
