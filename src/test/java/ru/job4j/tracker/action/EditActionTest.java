@@ -3,10 +3,12 @@ package ru.job4j.tracker.action;
 import junit.framework.TestCase;
 import org.junit.Test;
 import ru.job4j.tracker.Item;
-import ru.job4j.tracker.Tracker;
 import ru.job4j.tracker.inpute.Input;
 import ru.job4j.tracker.output.Output;
 import ru.job4j.tracker.output.StubOutput;
+import ru.job4j.tracker.repo.MemTracker;
+import ru.job4j.tracker.repo.Store;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
 import static org.mockito.ArgumentMatchers.any;
@@ -18,7 +20,7 @@ public class EditActionTest {
     @Test
     public void whenItemWasEditSuccessfully() {
         Output output = new StubOutput();
-        Tracker tracker = new Tracker();
+        Store tracker = new MemTracker();
         tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         EditAction replaceAction = new EditAction(output);
@@ -38,7 +40,7 @@ public class EditActionTest {
     @Test
     public void whenItemWasDeletedSuccessfully() {
         Output output = new StubOutput();
-        Tracker tracker = new Tracker();
+        Store tracker = new MemTracker();
         tracker.add(new Item("Deleted item"));
         String replacedName = "New item name";
         DeleteAction deleteAction = new DeleteAction(output);
@@ -58,7 +60,7 @@ public class EditActionTest {
     @Test
     public void whenItemWasFindItemByIdSuccessfully() {
         Output output = new StubOutput();
-        Tracker tracker = new Tracker();
+        Store tracker = new MemTracker();
         tracker.add(new Item("Item"));
         String replacedName = "New item name";
         FindByIdAction action = new FindByIdAction(output);
@@ -76,7 +78,7 @@ public class EditActionTest {
     @Test
     public void whenItemWasFindItemByNameSuccessfully() {
         Output output = new StubOutput();
-        Tracker tracker = new Tracker();
+        Store tracker = new MemTracker();
         tracker.add(new Item("Item"));
         String name = "New item name";
         FindByNameAction action = new FindByNameAction(output);
