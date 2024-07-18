@@ -5,10 +5,11 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Item {
-    @NonNull /*Сгенерирует конструктор с полем id.
+    @NonNull  /*Сгенерирует конструктор с полем id.*/
     public Item(final @NonNull int id) {
         this.id = id;
-    }*/
+    }
+
     @Getter
     @Setter
     private int id;
@@ -18,11 +19,13 @@ public class Item {
 }
 
 /*Чтобы явно указать, какие поля использовать в equals и hashCode нунжно включить
-параметр onlyExplicitlyIncuded и отметить нужные поля аннотацией @EqualsAndHashCode.Include.*/
+параметр onlyExplicitlyIncuded и отметить нужные поля аннотацией @EqualsAndHashCode.Include.
 
-/*@NoArgsConstructor - создается конструтор без параметров.
+
+@NoArgsConstructor - создается конструтор без параметров.
 
 @AllArgsConstructor - создает конструктор со вмести полями.
 
 @RequiredArgsConstructor - создает конструктор по полям отмеченным @NonNull*/
+
 
