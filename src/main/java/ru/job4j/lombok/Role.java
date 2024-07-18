@@ -20,3 +20,9 @@ public class Role {
     private List<String> accessBy;
 }
 */
+
+package ru.job4j.lombok;
+
+public class Role {
+    // поля, конструкторы, методы
+}
