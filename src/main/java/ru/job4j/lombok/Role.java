@@ -24,5 +24,5 @@ public class Role {
 package ru.job4j.lombok;
 
 public class Role {
-    // поля, конструкторы, методы
+    /*поля, конструкторы, методы*/
 }
