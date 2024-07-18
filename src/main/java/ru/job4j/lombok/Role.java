@@ -23,6 +23,15 @@ public class Role {
 
 package ru.job4j.lombok;
 
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
 public class Role {
-    /*поля, конструкторы, методы*/
+    private String name;
+
+    public static Role of(String name) {
+        return Role.builder().name(name).build();
+    }
 }
