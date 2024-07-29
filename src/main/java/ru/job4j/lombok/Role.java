@@ -15,7 +15,6 @@ public class Role {
     private int id;
     private String name;
 
-
     /*
         Аннотация @Singular позволяет аккумулировать отдельные элементы коллекции. Если ее убрать, то метод accessBy должен принимать список.
     */
